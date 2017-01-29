@@ -33,3 +33,19 @@ if os.path.exists(i3):
     shutil.rmtree(i3)
 
 shutil.copytree(".i3", home+"/.i3")
+
+i3 = "/etc/i3/config"
+try:
+    if os.path.exists(i3):
+        os.remove(i3)
+
+    shutil.copyfile("config", "/etc/i3/config")
+
+    print "Removing current folder. Setup should be completed."
+    shutil.rmtree(os.getcwd())
+    print "git clone https://github.com/frikky/vimconfig\n\
+        to get it back."
+
+except OSError as e:
+    print "!!!Missing permissions to edit /etc/i3.\
+            \n!!!%s\n!!!Try sudo python setup.py" % e 
