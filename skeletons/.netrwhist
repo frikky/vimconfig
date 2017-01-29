@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/frikky/Dropbox/Informatikk/INF1000/Obligs2'
-let g:netrw_dirhist_2='/home/frikky/Dropbox/Informatikk/INF1060/obligs/Oblig1/1060 oblig/oblig1-text/strings'
-let g:netrw_dirhist_3='/home/frikky/Dropbox/Informatikk/INF1000/Obligs'
-let g:netrw_dirhist_4='/home/frikky/Dropbox/Informatikk/1010/obligs/oblig5'
-let g:netrw_dirhist_5='/sys/class/power_supply/ADP1'
-let g:netrw_dirhist_6='/sys/devices/LNXSYSTM:00/device:00/PNP0C0A:00/power_supply/BAT1'
-let g:netrw_dirhist_7='/etc/rc.d'
