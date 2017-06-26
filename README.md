@@ -3,7 +3,7 @@ Complete setup of everything.
 
 commands:<br> 
 $ su<br>
-$ apt install i3 suckless-tools vim-nox open-vm-tools-desktop sudo chromium<br>
+$ apt install i3 suckless-tools vim-nox open-vm-tools-desktop sudo chromium python-pip<br>
 $ echo "frikky ALL=(ALL:ALL) ALL" >> /etc/sudoers<br>
 Run setup.py (as root)
 
