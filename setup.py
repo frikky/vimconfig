@@ -41,8 +41,7 @@ try:
 
     shutil.copyfile("config", "/etc/i3/config")
 
-    print "Removing current folder. Setup should be completed."
-    shutil.rmtree(os.getcwd())
+    print "Setup should be completed."
     print "git clone https://github.com/frikky/vimconfig\n\
         to get it back."
 
