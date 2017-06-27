@@ -1,6 +1,6 @@
 # DO ALL OF THIS :)
-Requires root to configure. Download sudo first.
-$ ./setup.sh 
+Requires root to configure. Download sudo first.<br>
+$ ./setup.sh
 
 configure terminal:<br>
 edit > preferences > Show menubar<br>
