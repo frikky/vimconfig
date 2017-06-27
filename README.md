@@ -13,5 +13,6 @@ Add lastpass<br>
 Add vimium<br>
 
 # Todo 
-Run su with commands to automate everything.
-Convert python script to bash script
+* Run su with commands to automate everything.
+* Convert python script to bash script
+* Do the above steps all in the script. Should be possible somehow \o/
