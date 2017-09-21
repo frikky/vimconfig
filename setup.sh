@@ -24,4 +24,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vi
 echo "Setting up jedi-vim (python vim plugin)"
 cd ~/.vim/bundle/ && git clone --recursive https://github.com/davidhalter/jedi-vim.git
 
+echo "Setting up powershell highlights for .ps1 files"
+cd ~/.vim/bundle && git clone https://github.com/PProvost/vim-ps1.git
+
 printf "\n[!!!] Only some more steps. See README"

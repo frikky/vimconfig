@@ -13,6 +13,7 @@ Add lastpass<br>
 Add vimium<br>
 
 # Todo 
-* Run su with commands to automate everything.
-* Convert python script to bash script
-* Do the above steps all in the script. Should be possible somehow \o/
+* [FINISHED] Run su with commands to automate everything.
+* [FINISHED] Do the above steps all in the script. Should be possible somehow \o/
+* [FINISHED] Add powershell highlight in vim config
+* [PARTLY DONE] Convert python script to bash
