@@ -1,7 +1,8 @@
-# DO ALL OF THIS :)
+# Debian installer script
 Before you start:
-$ su -
-$ apt install -y sudo git
+$ su -<br>
+$ apt install -y sudo git<br>
+ADD USER TO /etc/sudoers file!!
 
 Requires root to configure.br>
 $ ./setup.sh
@@ -15,3 +16,10 @@ edit > profile preferences > scrollbar<br>
 configure chromium for actual usage:<br>
 Add lastpass<br>
 Add vimium<br>
+
+$ sudo reboot now<br>
+
+Should now be good to go :)
+
+## TODO
+* Add user to sudoers file based on /etc/passwd
