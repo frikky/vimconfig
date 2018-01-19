@@ -26,6 +26,15 @@ export PATH=$GOPATH/bin:/$GOROOT/bin:$PATH
 echo "Setting up i3 and vim environment."
 python setup.py
 
+print "Copying vim config"
+mv .vim $HOME/.vim
+print "Copying .vimrc config"
+mv .vimrc $HOME/.vimrc
+
+print "Copying i3 config"
+mv .i3 $HOME/.i3
+mv config /etc/i3/config
+
 echo "Setting up pathogen for vim."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
