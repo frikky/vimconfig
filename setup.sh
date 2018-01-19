@@ -1,19 +1,27 @@
-#!/bin/bash
-
+#!/bin/bash 
 # Check if sudo installed 
 
 # Check if not root
 echo "Installing necessary tools"
-sudo apt install i3 suckless-tools vim-nox sudo chromium python-pip
+sudo apt install -y i3 suckless-tools vim-nox sudo chromium python-pip net-tools
 
 printf "\nVerifying vmware"
 verifyvmware=$(sudo dmidecode | grep -i vmware) 
 
 if ! [ -z $verifyvmware ]; then
-	sudo apt install open-vm-tools-desktop
+	sudo apt -y install open-vm-tools-desktop
 else
 	echo "vmware not present - not installing vmware tools" 
 fi
+
+printf "\nSetting up golang"
+wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
+sudo tar -xvf go1.9.2.linux-amd64.tar.gz
+sudo mv go /usr/local
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/work
+export PATH=$GOPATH/bin:/$GOROOT/bin:$PATH
 
 echo "Setting up i3 and vim environment."
 python setup.py
