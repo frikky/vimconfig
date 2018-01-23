@@ -39,11 +39,14 @@ mv config /etc/i3/config
 echo "Setting up pathogen for vim."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-echo "Setting up jedi-vim (python vim plugin)"
+echo "Setting up jedi-vim for python"
 cd ~/.vim/bundle/ && git clone --recursive https://github.com/davidhalter/jedi-vim.git
 
 echo "Setting up powershell highlights for .ps1 files"
 cd ~/.vim/bundle && git clone https://github.com/PProvost/vim-ps1.git
+
+echo "Setting up go highlights for .go files"
+git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 
 echo "Setting up docker"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -55,6 +58,19 @@ sudo apt-get install -y docker-ce
 echo "Downloading docker-compose version 1.18.0 - Might be deprecated"
 sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
+if [ "$whoami"="frikky" ]; then
+	echo "Setting up datasploit"
+	# Hidden directory :D
+	git clone https://github.com/DataSploit/datasploit
+	echo "\nPlease provide github credentials."
+	git clone https://github.com/frikky/config_keys
+	cp config_keys/config.py datasploit/config.py
+	rm -rf config_keys
+	pip install --upgrade --force-reinstall -r datasploit/requirements.txt
+	mv datasploit ..
+	mkdir ~/git
+fi
 
 echo "Everything should be set up!"
 printf "\n[!!!] Only some more steps. See README"
