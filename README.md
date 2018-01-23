@@ -1,14 +1,13 @@
-# Debian installer script
-Made for automation whenever I set up a new environment.
+# Debian i3 installer script
+Made for automation whenever I set up a new debian environment. (Happens a lot..)
 
 ## Before you start
 ```bash
-$ su -<br>
-$ apt install -y sudo git<br>
+$ su - 						
+$ apt install -y sudo git	
 ```
-ADD USER TO /etc/sudoers file!!
+**ADD USER TO /etc/sudoers file!!**
 
-Requires sudo<br>
 ```bash
 $ ./setup.sh
 ```
@@ -24,7 +23,7 @@ Add lastpass<br>
 Add vimium<br>
 
 ```bash
-$ sudo reboot now<br>
+$ sudo reboot now
 ```
 
 ## TODO

@@ -67,8 +67,8 @@ if [ "$whoami"="frikky" ]; then
 	cp config_keys/config.py datasploit/config.py
 	rm -rf config_keys
 	pip install --upgrade --force-reinstall -r datasploit/requirements.txt
-	mv datasploit ..
 	mkdir ~/git
+	mv datasploit ~/git/datasploit
 fi
 
 printf "\n\n[!!!] Only some more steps. See README for some manual config\nURL: https://github.com/frikky/vimconfig\n"
