@@ -18,14 +18,12 @@ fi
 printf "\nSetting up golang"
 wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
 sudo tar -xvf go1.9.2.linux-amd64.tar.gz
+rm go1.9.2.linux-amd64.tar.gz
 sudo mv go /usr/local
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/work
 export PATH=$GOPATH/bin:/$GOROOT/bin:$PATH
-
-echo "Setting up i3 and vim environment."
-python setup.py
 
 print "Copying vim config"
 mv .vim $HOME/.vim
@@ -33,8 +31,8 @@ print "Copying .vimrc config"
 mv .vimrc $HOME/.vimrc
 
 print "Copying i3 config"
-mv .i3 $HOME/.i3
-mv config /etc/i3/config
+sudo mv .i3 $HOME/.i3
+sudo mv config /etc/i3/config
 
 echo "Setting up pathogen for vim."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -59,6 +57,7 @@ echo "Downloading docker-compose version 1.18.0 - Might be deprecated"
 sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+# Hello "hidden" directory :^)
 if [ "$whoami"="frikky" ]; then
 	echo "Setting up datasploit"
 	# Hidden directory :D
@@ -72,5 +71,4 @@ if [ "$whoami"="frikky" ]; then
 	mkdir ~/git
 fi
 
-echo "Everything should be set up!"
-printf "\n[!!!] Only some more steps. See README"
+printf "\n\n[!!!] Only some more steps. See README for some manual config\nURL: https://github.com/frikky/vimconfig\n"

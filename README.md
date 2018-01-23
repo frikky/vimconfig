@@ -1,25 +1,31 @@
 # Debian installer script
-Before you start:
+Made for automation whenever I set up a new environment.
+
+## Before you start
+```bash
 $ su -<br>
 $ apt install -y sudo git<br>
+```
 ADD USER TO /etc/sudoers file!!
 
-Requires root to configure.br>
+Requires sudo<br>
+```bash
 $ ./setup.sh
+```
 
-configure terminal after setup:<br>
+## POST SCRIPT - configure terminal after setup
 edit > preferences > Show menubar<br>
 edit > profile preferences > colors > "Use colors from system theme" = Solarized Dark<br>
 edit > profile preferences > colors > Palette = Solarized<br>
 edit > profile preferences > scrollbar<br>
 
-configure chromium for actual usage:<br>
+### Configure chromium
 Add lastpass<br>
 Add vimium<br>
 
+```bash
 $ sudo reboot now<br>
-
-Should now be good to go :)
+```
 
 ## TODO
 * Add user to sudoers file based on /etc/passwd
