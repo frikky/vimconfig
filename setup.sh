@@ -16,8 +16,8 @@ else
 fi
 
 printf "\nSetting up golang"
-wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
-sudo tar -xvf go1.9.2.linux-amd64.tar.gz
+wget https://storage.googleapis.com/golang/go1.11.2.linux-amd64.tar.gz
+sudo tar -xvf go1.11.2.linux-amd64.tar.gz
 rm go1.9.2.linux-amd64.tar.gz
 sudo mv go /usr/local
 
