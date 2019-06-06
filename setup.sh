@@ -72,7 +72,11 @@ make -j 8
 sudo make altinstall
 cd ..
 
-echo "ATTEMPTING to fix python3.7-pip"
+echo "Fixing npm stuff"
+wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz
+tar xvf node-v10.16.0-linux-x64
+sudo mv node-v10.16.0-linux-x64 /usr/local/node
+sudo ln -s /usr/local/node/bin/* /usr/bin/
 
 # Hello "hidden" directory :^)
 if [ "$whoami"="frikky" ]; then
