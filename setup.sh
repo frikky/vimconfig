@@ -18,8 +18,9 @@ fi
 printf "\nSetting up golang"
 wget https://storage.googleapis.com/golang/go1.11.2.linux-amd64.tar.gz
 sudo tar -xvf go1.11.2.linux-amd64.tar.gz
-rm go1.9.2.linux-amd64.tar.gz
+rm go1.11.2.linux-amd64.tar.gz
 sudo mv go /usr/local
+sudo ln -s /usr/local/go/bin/go /usr/bin/go
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/work
@@ -49,13 +50,29 @@ git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 echo "Setting up docker"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce
 
 echo "Downloading docker-compose version 1.18.0 - Might be deprecated"
-sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
+echo "Installing node and npm"
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install build-essential nodejs
+
+echo "Installing python3.7"
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+curl -O https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz
+tar -xf Python-3.7.3.tar.xz
+cd Python-3.7.3
+./configure --enable-optimizations
+make -j 8
+sudo make altinstall
+cd ..
+
+echo "ATTEMPTING to fix python3.7-pip"
 
 # Hello "hidden" directory :^)
 if [ "$whoami"="frikky" ]; then
