@@ -1,5 +1,5 @@
-# Debian i3 installer script
-Made for automation whenever I set up a new debian environment. (Happens a lot..)
+# Debian installer script
+Made for automation whenever I set up a new debian environment (Happens a lot..)
 
 ## Before you start
 ```bash
@@ -25,6 +25,3 @@ Add vimium<br>
 ```bash
 $ sudo reboot now
 ```
-
-## TODO
-* Add user to sudoers file based on /etc/passwd
