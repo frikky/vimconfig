@@ -17,6 +17,7 @@ edit > preferences > Show menubar<br>
 edit > profile preferences > colors > "Use colors from system theme" = Solarized Dark<br>
 edit > profile preferences > colors > Palette = Solarized<br>
 edit > profile preferences > scrollbar<br>
+edit > profile preferences > text > Custom font > Monospace 17~<br>
 
 ### Configure chromium
 Add lastpass<br>
