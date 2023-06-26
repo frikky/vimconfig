@@ -6,7 +6,10 @@ echo "Installing necessary tools"
 sudo apt update -y
 sudo apt install -y i3 suckless-tools vim-nox sudo chromium python3-pip net-tools apt-transport-https ca-certificates curl software-properties-common
 
-printf "\nVerifying vmware"
+echo "Setting timezone to europe/oslo"
+sudo timedatectl set-timezone Europe/Oslo
+
+printf "\nVerifying if in VM or not (vmware)"
 verifyvmware=$(sudo dmidecode | grep -i vmware) 
 
 if ! [ -z $verifyvmware ]; then
