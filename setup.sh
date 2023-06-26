@@ -35,6 +35,9 @@ print "Copying i3 config"
 sudo cp -r .i3 $HOME/.i3
 sudo cp .i3/config /etc/i3/config
 
+print "Copying X config"
+sudo cp .Xresources $HOME/.Xresources
+
 echo "Setting up pathogen for vim."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
